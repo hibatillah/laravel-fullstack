@@ -12,67 +12,59 @@
 
 <body class="bg-[#030E21]">
 
-    <main class="container mx-auto p-8 h-screen grid place-items-center">
-        <div class="w-full h-80 px-5 py-4 rounded-xl bg-slate-800/70">
-            <h2 class="text-xl font-semibold text-slate-200">Formulir</h2>
+    <main class="container mx-auto lg:p-8 h-screen grid place-items-center">
+        <div class="w-full min-h-fit p-4 space-y-8 rounded-xl bg-slate-800/70">
+            <div class="flex justify-between items-end">
+                <h2 class="pl-1 text-2xl font-bold text-slate-200">Formulir</h2>
+                <a href="{{ route('formulir.create') }}">
+                    <div class="px-3 py-1 rounded-md bg-blue-500 text-sm text-white font-medium hover:bg-blue-500/80 active:bg-blue-600">Tambah Formulir</div>
+                </a>
+            </div>
+            <table class="table-auto border-collapse w-full border border-slate-700/80 rounded-lg text-slate-300 overflow-hidden">
+                <thead class="bg-slate-700/80 border border-slate-700/80">
+                    <tr>
+                        <th class="text-left py-2 pl-4">Gambar</th>
+                        <th class="text-left py-2">Cost</th>
+                        <th class="text-left py-2">Due Date</th>
+                        <th class="text-left py-2">Description</th>
+                        <th class="text-left py-2">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-500/50">
+                    @forelse ($data as $formulir)
+                    <tr class="">
+                        <td class="py-2 pl-4">
+                            <div class="w-52 aspect-video rounded bg-slate-700/40 overflow-hidden">
+                                <img src="{{Storage::url('public/formulir/') . $formulir->photo }}" class="w-full h-full object-cover">
+                            </div>
+                        </td>
+                        <td>
+                            {{ $formulir->cost}}
+                        </td>
+                        <td>
+                            {{ $formulir->due_date}}
+                        </td>
+                        <td>
+                            {!!$formulir->description !!}
+                        </td>
+                        <td>
+                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('formulir.destroy', $formulir->id) }}" method="post">
+                                <div class="flex flex-col gap-2">
+                                    <a href="{{route('formulir.edit', $formulir->id) }}" class="w-fit px-3 py-1 rounded-md bg-indigo-500 text-sm text-white font-medium hover:bg-indigo-500/80 active:bg-indigo-600">EDIT</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="w-fit px-3 py-1 rounded-md bg-red-500 text-sm text-white font-medium hover:bg-red-500/80 active:bg-red-600">HAPUS</button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    @empty
+                    <div class="alert alert-danger">Data formulir belum Tersedia.</div>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </main>
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card border-0 shadow rounded">
-                    <div class="card-body">
-
-                        4 | Muhammad Mahrus Zain, S.S.T., M.T.I.
-
-                        <a href="{{ route('formulir.create') }}" class="btn btn-md btn-success mb-3">TAMBAH FORMULIR</a>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">GAMBAR</th>
-                                    <th scope="col">COST</th>
-                                    <th scope="col">DUE DATE</th>
-                                    <th scope="col">DESCRIPTION</th>
-                                    <th scope="col">AKSI</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($data as $formulir)
-                                <tr>
-                                    <td class="text-center">
-                                        <img src="{{Storage::url('public/formulir/') . $formulir->photo }}" class="rounded" style="width: 150px">
-                                    </td>
-                                    <td>
-                                        {{ $formulir->cost}}
-                                    </td>
-                                    <td>
-                                        {{ $formulir->due_date}}
-                                    </td>
-                                    <td>
-                                        {!!$formulir->description !!}
-                                    </td>
-                                    <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('formulir.destroy', $formulir->id) }}" method="post">
-                                            <a href="{{route('formulir.edit', $formulir->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-                                            @csrf
-                                            @method('DELETE')
-
-                                            5 | Muhammad Mahrus Zain, S.S.T., M.T.I.
-                                            <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @empty
-                                <div class="alert alert-danger">Data formulir belum Tersedia.</div>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
