@@ -17,7 +17,6 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <form action="{{ route('formulir.store') }}" method="post" enctype="multipart/form-data">
-                            7 | Muhammad Mahrus Zain, S.S.T., M.T.I.
                             @csrf
                             <div class="form-group">
                                 <label class="font-weight-bold">PHOTO</label>
