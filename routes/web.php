@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/formulir', App\Http\Controllers\FormulirController::class);
+
+Route::resource('/artikel', App\Http\Controllers\ArtikelController::class);
