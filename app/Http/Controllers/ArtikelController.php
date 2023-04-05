@@ -71,7 +71,8 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=DB::table('artikel_mhibatillah')->where('ID_Artikel', $id)->first();
+        return view('artikel.edit', compact('data'));
     }
 
     /**
@@ -83,7 +84,27 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'Gambar_Artikel' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'Tanggal_Artikel' => 'required',
+            'Kategori_Artikel' => 'required',
+            'Status_Artikel' => 'required',
+            'Konten_Artikel' => 'required'
+        ]);
+        // cek update foto atau tidak
+        if($request->file('Gambar_Artikel')){
+
+            $image = $request->file('Gambar_Artikel');
+            $image->storeAs('public/artikel', $image->hashName());
+
+            DB::update("UPDATE `artikel_mhibatillah` set `Gambar_Artikel`=?, `Tanggal_Artikel`=?, `Kategori_Artikel`=?, `Status_Artikel`=?, `Konten_Artikel`=? WHERE ID_Artikel=?",
+            [$image->hashName(),$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artikel, $id]);
+        }else{
+            DB::update("UPDATE `artikel_mhibatillah` set `Tanggal_Artikel`=?, `Kategori_Artikel`=?, `Status_Artikel`=?, `Konten_Artikel`=? WHERE ID_Artikel=?",
+            [$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artike, $idl]);
+
+        }
+        return redirect()->route('artikel.index')->with(['success'=> 'Data berhasil diupdate!']);
     }
 
     /**
@@ -94,6 +115,9 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('artikel_mhibatillah')->where('ID_Artikel', $id)->delete();
+
+        // redirect to index
+        return redirect()->route('artikel.index')->with(['success' => 'Data berhasil dihapus!']);
     }
 }

@@ -21,7 +21,7 @@
             <table class="table-auto border-collapse w-full border border-slate-700/80 rounded-lg text-slate-300 overflow-hidden">
                 <thead class="bg-slate-700/80 border border-slate-700/80">
                     <tr>
-                        <th class="text-left py-2">Gambar</th>
+                        <th class="text-left py-2 pl-2">Gambar</th>
                         <th class="text-left py-2">Tanggal</th>
                         <th class="text-left py-2">Kategori</th>
                         <th class="text-left py-2">Konten</th>
