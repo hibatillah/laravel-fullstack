@@ -44,23 +44,23 @@
                                     <div class="flex-fill w-100">
                                         <label class="font-weight-bold">Kategori</label>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="PMB">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"   name="Kategori_Artikel" id="PMB" value="PMB">
                                             <label class="form-check-label" for="PMB">PMB</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" Kerja PCR" name="Kategori_Artikel" id="Program Kerja PCR">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" Kerja PCR" name="Kategori_Artikel" id="Program K value="Program Kerja PCR">
                                             <label class="form-check-label" for="Program Kerja PCR">Program Kerja PCR</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Penghargaan">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Penghargaan" value="Penghargaan">
                                             <label class="form-check-label" for="Penghargaan">Penghargaan</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Lomba">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Lomba" value="Lomba">
                                             <label class="form-check-label" for="Lomba">Lomba</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Umum">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Umum" value="Umum">
                                             <label class="form-check-label" for="Umum">Umum</label>
                                         </div>
                                         <!-- error message untuk Kategori_Artikel -->
