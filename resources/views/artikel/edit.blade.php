@@ -44,23 +44,23 @@
                                     <div class="flex-fill w-100">
                                         <label class="font-weight-bold">Kategori</label>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" name="Kategori_Artikel" id="PMB" value="PMB">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" {{ ($data->Kategori_Artikel=="PMB") ? "checked" : ""}} name="Kategori_Artikel" id="PMB" value="PMB">
                                             <label class="form-check-label" for="PMB">PMB</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" Kerja PCR" name="Kategori_Artikel" id="Program Kerja" value="Program Kerja PCR">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" {{ ($data->Kategori_Artikel=="Program Kerja PCR") ? "checked" : ""}} Kerja PCR" name="Kategori_Artikel" id="Program Kerja" value="Program Kerja PCR">
                                             <label class="form-check-label" for="Program Kerja PCR">Program Kerja PCR</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Penghargaan" value="Penghargaan">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" {{ ($data->Kategori_Artikel=="Penghargaan") ? "checked" : ""}}  name="Kategori_Artikel" id="Penghargaan" value="Penghargaan">
                                             <label class="form-check-label" for="Penghargaan">Penghargaan</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Lomba" value="Lomba">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" {{ ($data->Kategori_Artikel=="Lomba") ? "checked" : ""}}  name="Kategori_Artikel" id="Lomba" value="Lomba">
                                             <label class="form-check-label" for="Lomba">Lomba</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"  name="Kategori_Artikel" id="Umum" value="Umum">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" {{ ($data->Kategori_Artikel=="Umum") ? "checked" : ""}}  name="Kategori_Artikel" id="Umum" value="Umum">
                                             <label class="form-check-label" for="Umum">Umum</label>
                                         </div>
                                         <!-- error message untuk Kategori_Artikel -->
@@ -73,11 +73,11 @@
                                     <div class="flex-fill w-100">
                                         <label class="font-weight-bold">Status</label>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Aktif" name="Status_Artikel" id="Aktif">
+                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" {{ ($data->Status_Artikel=="Aktif") ? "checked" : ""}} value="Aktif" name="Status_Artikel" id="Aktif">
                                             <label class="form-check-label" for="Aktif">Aktif</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Tidak Aktif" name="Status_Artikel" id="Tidak aktif">
+                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" {{ ($data->Status_Artikel=="Tidak Aktif") ? "checked" : ""}} value="Tidak Aktif" name="Status_Artikel" id="Tidak aktif">
                                             <label class="form-check-label" for="Tidak aktif">Tidak aktif</label>
                                         </div>
                                         <!-- error message untuk Status_Artikel -->
