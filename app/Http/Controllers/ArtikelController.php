@@ -85,7 +85,7 @@ class ArtikelController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'Gambar_Artikel' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'Gambar_Artikel' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'Tanggal_Artikel' => 'required',
             'Kategori_Artikel' => 'required',
             'Status_Artikel' => 'required',
@@ -101,7 +101,7 @@ class ArtikelController extends Controller
             [$image->hashName(),$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artikel, $id]);
         }else{
             DB::update("UPDATE `artikel_mhibatillah` set `Tanggal_Artikel`=?, `Kategori_Artikel`=?, `Status_Artikel`=?, `Konten_Artikel`=? WHERE ID_Artikel=?",
-            [$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artike, $id]);
+            [$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artikel, $id]);
 
         }
         return redirect()->route('artikel.index')->with(['success'=> 'Data berhasil diupdate!']);
