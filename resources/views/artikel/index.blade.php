@@ -15,7 +15,7 @@
             <div class="flex justify-between items-end">
                 <h2 class="pl-1 text-2xl font-bold text-slate-200">Artikel</h2>
                 <a href="{{ route('artikel.create') }}">
-                    <div class="px-3 py-1 rounded-md bg-blue-500 text-sm text-white font-medium hover:bg-blue-500/80 active:bg-blue-600">Tambah artikel</div>
+                    <div class="px-4 py-2 rounded-md bg-blue-500 text-sm text-white font-medium hover:bg-blue-500/80 active:bg-blue-600">Tambah artikel</div>
                 </a>
             </div>
             <table class="table-auto border-collapse w-full border border-slate-700/80 rounded-lg text-slate-300 overflow-hidden">

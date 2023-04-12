@@ -44,11 +44,11 @@
                                     <div class="flex-fill w-100">
                                         <label class="font-weight-bold">Kategori</label>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio"   name="Kategori_Artikel" id="PMB" value="PMB">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" name="Kategori_Artikel" id="PMB" value="PMB">
                                             <label class="form-check-label" for="PMB">PMB</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" Kerja PCR" name="Kategori_Artikel" id="Program K value="Program Kerja PCR">
+                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" Kerja PCR" name="Kategori_Artikel" id="Program Kerja" value="Program Kerja PCR">
                                             <label class="form-check-label" for="Program Kerja PCR">Program Kerja PCR</label>
                                         </div>
                                         <div class="form-check">
