@@ -25,7 +25,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        return view('artikel.create');
+        return view('artikel.buat');
     }
 
     /**
@@ -101,7 +101,7 @@ class ArtikelController extends Controller
             [$image->hashName(),$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artikel, $id]);
         }else{
             DB::update("UPDATE `artikel_mhibatillah` set `Tanggal_Artikel`=?, `Kategori_Artikel`=?, `Status_Artikel`=?, `Konten_Artikel`=? WHERE ID_Artikel=?",
-            [$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artike, $idl]);
+            [$request->Tanggal_Artikel,$request->Kategori_Artikel,$request->Status_Artikel,$request->Konten_Artike, $id]);
 
         }
         return redirect()->route('artikel.index')->with(['success'=> 'Data berhasil diupdate!']);

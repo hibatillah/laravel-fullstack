@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">Tanggal</label>
-                                <input type="datetime-local" 8 | Muhammad Mahrus Zain, S.S.T., M.T.I class="form-control @error('Tanggal_Artikel') is-invalid @enderror" name="Tanggal_Artikel" value="{{ $data->Tanggal_Artikel }}">
+                                <input type="datetime-local" class="form-control @error('Tanggal_Artikel') is-invalid @enderror" name="Tanggal_Artikel" value="{{ $data->Tanggal_Artikel }}">
                                 <!-- error message untuk Tanggal_Artikel -->
                                 @error('Tanggal_Artikel')
                                 <div class=" alert alert-danger mt-2">
@@ -90,9 +90,9 @@
                                 </div>
                             </div>  
                             <div class="form-group">
-                                <label class="font-weight-bold mt-2">Konten Artikel</label>
-                                <textarea class="form-control @error('Konten_Artikel') is-invalid @enderror" name="Konten_Artikel" rows="5" placeholder="Masukkan Konten artikel">
-                                    {{ $data->Konten_Artikel  }}
+                                <label class="font-weight-bold">Konten Artikel</label>
+                                <textarea class="form-control @error('Konten_Artikel') is-invalid @enderror" name="Konten_Artikel" rows="5" placeholder="Masukkan Konten Formulir">
+                                    {{ $data->Konten_Artikel }}
                                 </textarea>
                                 <!-- error message untuk Konten_Artikel -->
                                 @error('Konten_Artikel')

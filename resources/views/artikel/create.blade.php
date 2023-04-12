@@ -39,59 +39,53 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <div class="d-flex">
-                                    <div class="flex-fill w-100">
-                                        <label class="font-weight-bold">Kategori</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="PMB" name="Kategori_Artikel" id="PMB">
-                                            <label class="form-check-label" for="PMB">PMB</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Program Kerja PCR" name="Kategori_Artikel" id="Program Kerja PCR">
-                                            <label class="form-check-label" for="Program Kerja PCR">Program Kerja PCR</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Penghargaan" name="Kategori_Artikel" id="Penghargaan">
-                                            <label class="form-check-label" for="Penghargaan">Penghargaan</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Lomba" name="Kategori_Artikel" id="Lomba">
-                                            <label class="form-check-label" for="Lomba">Lomba</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Umum" name="Kategori_Artikel" id="Umum">
-                                            <label class="form-check-label" for="Umum">Umum</label>
-                                        </div>
-                                        <!-- error message untuk Kategori_Artikel -->
-                                        @error('Kategori_Artikel')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="flex-fill w-100">
-                                        <label class="font-weight-bold">Status</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Aktif" name="Status_Artikel" id="Aktif">
-                                            <label class="form-check-label" for="Aktif">Aktif</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Tidak Aktif" name="Status_Artikel" id="Tidak aktif">
-                                            <label class="form-check-label" for="Tidak aktif">Tidak aktif</label>
-                                        </div>
-                                        <!-- error message untuk Status_Artikel -->
-                                        @error('Status_Artikel')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                            @enderror
-                                        </div>
-                                    </div>
+                                <label class="font-weight-bold">Kategori</label>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="PMB" name="Kategori_Artikel" id="PMB">
+                                    <label class="form-check-label" for="PMB">PMB</label>
                                 </div>
-                            </div>  
-                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Program Kerja PCR" name="Kategori_Artikel" id="Program Kerja PCR">
+                                    <label class="form-check-label" for="Program Kerja PCR">Program Kerja PCR</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Penghargaan" name="Kategori_Artikel" id="Penghargaan">
+                                    <label class="form-check-label" for="Penghargaan">Penghargaan</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Lomba" name="Kategori_Artikel" id="Lomba">
+                                    <label class="form-check-label" for="Lomba">Lomba</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Kategori_Artikel') is-invalid @enderror" type="radio" value="Umum" name="Kategori_Artikel" id="Umum">
+                                    <label class="form-check-label" for="Umum">Umum</label>
+                                </div>
+                                <!-- error message untuk Kategori_Artikel -->
+                                @error('Kategori_Artikel')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                    @enderror
+                                </div>
+                                <label class="font-weight-bold">Status</label>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Aktif" name="Status_Artikel" id="Aktif">
+                                    <label class="form-check-label" for="Aktif">Aktif</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input @error('Status_Artikel') is-invalid @enderror" type="radio" value="Tidak Aktif" name="Status_Artikel" id="Tidak aktif">
+                                    <label class="form-check-label" for="Tidak aktif">Tidak aktif</label>
+                                </div>
+                                <!-- error message untuk Status_Artikel -->
+                                @error('Status_Artikel')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                    @enderror
+                                </div>
+                            <div class="form-group px-3">
                                 <label class="font-weight-bold mt-2">Konten Artikel</label>
-                                <textarea class="form-control @error('Konten_Artikel') is-invalid @enderror" name="Konten_Artikel" rows="5" placeholder="Masukkan Konten artikel">
-                                </textarea>
+                                <div class="form-floating">
+                                    <textarea class="form-control @error('Konten_Artikel') is-invalid @enderror" name="Konten_Artikel" rows="5" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                </div>
                                 <!-- error message untuk Konten_Artikel -->
                                 @error('Konten_Artikel')
                                 <div class="alert alert-danger mt-2">
@@ -99,8 +93,10 @@
                                 </div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                            <div class="px-3 pb-3">
+                                <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                                <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                            </div>
                         </form>
                     </div>
                 </div>
