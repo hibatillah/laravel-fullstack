@@ -1,83 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdn.tailwindcss.com"></script>
-    <title>Artikel</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Data Artikel</title>
 </head>
+<body>
 
-<body class="bg-[#030E21]">
+  <div class="w-full min-h-screen grid place-items-center">
+    <div class="min-w-[70%] max-w-[80%]">
+      <div class="flex justify-between items-end">
+        <h1 class="font-bold text-2xl/none ml-2">Data Artikel</h1>
+        <a href="{{ route('artikel.create') }}">
+          <div class="px-6 py-2 rounded-lg font-semibold text-white bg-indigo-600 text-sm shadow-md active:bg-indigo-700">Tambah Artikel</div>
+        </a>
+      </div>
+      <div class="min-h-[50dvh] p-4 mt-4 rounded-lg border border-indigo-300">
+        <table class="table-fixed w-full">
+          <thead>
+            <tr class="text-indigo-600 text-xs uppercase bg-indigo-100 rounded-lg text-left overflow-hidden">
+              <th class="p-2 w-[17%]">Gambar</th>
+              <th class="p-2 w-[15%]">Tanggal</th>
+              <th class="p-2 w-[33%]">Konten</th>
+              <th class="p-2 w-[15%]">Kategori</th>
+              <th class="p-2 w-[10%]">Status</th>
+              <th class="p-2 w-[10%]">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-indigo-300">
+            @forelse ($data as $artikel)
+            <tr class="text-slate-700">
+              <td class="px-2 py-3">
+                <img src="{{Storage::url('public/artikel/') . $artikel->Gambar_Artikel }}" alt="Gambar_Artikel" class="w-44 aspect-video rounded object-cover border border-indigo-300 overflow-hidden">
+              </td>
+              <td class="px-2 py-3">
+                {{ $artikel->Tanggal_Artikel }}
+              </td>
+              <td class="px-2 py-3">
+                {!!$artikel->Konten_Artikel !!}
+              </td>
+              <td class="px-2 py-3">
+                <div class="w-fit px-4 py-1.5 rounded-md text-xs font-semibold tracking-wide bg-slate-100 text-slate-600">
+                  {{ $artikel->Kategori_Artikel }}
+                </div>
+              </td>
+              <td class="px-2 py-3">
+                <div class="w-fit px-4 py-1.5 rounded-md text-xs font-semibold tracking-wide {{ ($artikel->Status_Artikel=='Aktif') ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600' }}  ">
+                  {{ $artikel->Status_Artikel }}
+                </div>
+              </td>
+              <td class="px-2 py-3">
+                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('artikel.destroy', $artikel->ID_Artikel) }}" method="post">
+                  <div class="w-fit flex flex-col gap-1.5 text-center">
+                      <a href="{{route('artikel.edit', $artikel->ID_Artikel) }}" class="flex-1 px-4 py-1.5 rounded-md bg-indigo-500 text-xs text-white font-medium hover:bg-indigo-600 active:bg-indigo-500 tracking-wider">EDIT</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="w-fit px-4 py-1.5 rounded-md bg-red-500 text-xs text-white font-medium hover:bg-red-600 active:bg-red-500 tracking-wider">HAPUS</button>
+                  </div>
+                </form>
+              </td>
+              @empty
+              <div class="">Data artikel belum tersedia.</div>
+            </tr>
+            @endforelse
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-    <main class="container mx-auto lg:p-8 h-screen grid place-items-center">
-        <div class="w-full min-h-fit p-4 space-y-8 rounded-xl bg-slate-800/70">
-            <div class="flex justify-between items-end">
-                <h2 class="pl-1 text-2xl font-bold text-slate-200">Artikel</h2>
-                <a href="{{ route('artikel.create') }}">
-                    <div class="px-4 py-2 rounded-md bg-blue-500 text-sm text-white font-medium hover:bg-blue-500/80 active:bg-blue-600">Tambah artikel</div>
-                </a>
-            </div>
-            <table class="table-auto border-collapse w-full border border-slate-700/80 rounded-lg text-slate-300 overflow-hidden">
-                <thead class="bg-slate-700/80 border border-slate-700/80">
-                    <tr>
-                        <th class="text-left py-2 pl-2">Gambar</th>
-                        <th class="text-left py-2">Tanggal</th>
-                        <th class="text-left py-2">Kategori</th>
-                        <th class="text-left py-2">Konten</th>
-                        <th class="text-left py-2">Status</th>
-                        <th class="text-left py-2">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-500/50">
-                    @forelse ($data as $artikel)
-                    <tr class="">
-                        <td class="py-2 pl-4">
-                            <div class="w-52 aspect-video rounded bg-slate-700/40 overflow-hidden">
-                                <img src="{{Storage::url('public/artikel/') . $artikel->Gambar_Artikel }}" class="w-full h-full object-cover">
-                            </div>
-                        </td>
-                        <td>
-                            {{ $artikel->Tanggal_Artikel}}
-                        </td>
-                        <td>
-                            {{ $artikel->Kategori_Artikel}}
-                        </td>
-                        <td>
-                            {!!$artikel->Konten_Artikel !!}
-                        </td>
-                        <td>
-                            {!!$artikel->Status_Artikel !!}
-                        </td>
-                        <td>
-                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('artikel.destroy', $artikel->ID_Artikel) }}" method="post">
-                                <div class="flex flex-col gap-2">
-                                    <a href="{{route('artikel.edit', $artikel->ID_Artikel) }}" class="w-fit px-3 py-1 rounded-md bg-indigo-500 text-sm text-white font-medium hover:bg-indigo-500/80 active:bg-indigo-600">EDIT</a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="w-fit px-3 py-1 rounded-md bg-red-500 text-sm text-white font-medium hover:bg-red-500/80 active:bg-red-600">HAPUS</button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
-                    @empty
-                    <div class="alert alert-danger">Data artikel belum Tersedia.</div>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-    </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script>
+      //message with toastr
+      @if (session()->has('success'))
+      toastr.success('{{ session('success') }}', 'BERHASIL!');
+      @elseif (session()->has('error'))
+      toastr.error('{{ session('error') }}', 'GAGAL!');
+      @endif
+  </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
-        //message with toastr
-        @if (session()->has('success'))
-        toastr.success('{{ session('success') }}', 'BERHASIL!');
-        @elseif (session()->has('error'))
-        toastr.error('{{ session('error') }}', 'GAGAL!');
-        @endif
-    </script>
 </body>
-
 </html>

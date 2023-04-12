@@ -15,7 +15,7 @@
         <div class="col-span-1 bg-[#3c37ff] flex flex-col justify-between rounded-2xl p-10 text-white">
             <h3 class="tracking-wider font-semibold uppercase">Artikel</h3>
             <div class="space-y-2">
-                <h1 class="text-4xl tracking-wider font-semibold">Buat artikelmu sendiri!</h1>
+                <h1 class="text-4xl tracking-wider font-bold">Buat artikelmu sendiri!</h1>
                 <p class="text-slate-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique necessitatibus porro officia alias esse harum?</p>
             </div>
             <div class="w-full bg-[#2520e3] rounded-xl p-6 space-y-4">
@@ -106,14 +106,14 @@
                     <label class="text-slate-600">Konten Artikel</label>
                     <textarea name="Konten_Artikel" id="Konten_Artikel" rows="4" placeholder="Tulis artikel..." class="w-full px-3 py-2 rounded-lg border border-indigo-300 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-slate-700 resize-y @error('Konten_Artikel') is-invalid @enderror"></textarea>
                     @error('Konten_Artikel')
-                    <div class="text-red-600 text-xs">
+                    <div class="text-red-600 text-xs -translate-y-2">
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
                 <div class="flex gap-2">
-                    <button type="reset" class="px-8 py-2 rounded-lg font-semibold text-indigo-700 bg-indigo-50 uppercase">Reset</button>
-                    <button type="submit" class="px-8 py-2 rounded-lg font-semibold text-white bg-indigo-600 uppercase">Simpan</button>
+                    <button type="reset" class="px-8 py-2 rounded-lg font-semibold text-indigo-700 bg-indigo-50 active:bg-indigo-100">Reset</button>
+                    <button type="submit" class="px-8 py-2 rounded-lg font-semibold text-white bg-indigo-600 active:bg-indigo-700">Simpan</button>
                 </div>
             </form>
         </div>
