@@ -12,15 +12,15 @@
   <div class="w-full min-h-screen grid place-items-center">
     <div class="min-w-[70%] max-w-[80%]">
       <div class="flex justify-between items-end">
-        <h1 class="font-bold text-2xl/none text-slate-900 ml-2">Data Artikel</h1>
+        <h1 class="font-bold text-2xl/none text-slate-900 ml-1">Data Artikel</h1>
         <a href="{{ route('artikel.create') }}">
           <div class="px-6 py-2 rounded-lg font-semibold text-white bg-[#3c37ff] text-sm shadow-md active:bg-indigo-700">Tambah Artikel</div>
         </a>
       </div>
       <div class="min-h-[50dvh] p-4 mt-4 rounded-lg border border-indigo-300">
         <table class="table-fixed w-full">
-          <thead>
-            <tr class="text-indigo-600 text-xs uppercase bg-indigo-100 rounded-lg text-left overflow-hidden">
+          <thead class="bg-indigo-100 rounded-lg overflow-hidden">
+            <tr class="text-indigo-600 text-xs uppercase text-left">
               <th class="p-2 w-[17%]">Gambar</th>
               <th class="p-2 w-[15%]">Tanggal</th>
               <th class="p-2 w-[31%]">Konten</th>
