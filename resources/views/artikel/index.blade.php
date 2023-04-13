@@ -33,7 +33,7 @@
             @forelse ($data as $artikel)
             <tr class="text-slate-700">
               <td class="px-2 py-3">
-                <img src="{{Storage::url('public/artikel/') . $artikel->Gambar_Artikel }}" alt="Gambar_Artikel" class="w-44 aspect-video rounded object-cover border border-indigo-300 overflow-hidden">
+                <img src="{{Storage::url('public/artikel/') . $artikel->Gambar_Artikel }}" alt="Gambar_Artikel" class="w-44 aspect-video rounded object-cover border border-indigo-300 overflow-hidden pointer-events-none">
               </td>
               <td class="px-2 py-3">
                 {{ $artikel->Tanggal_Artikel }}

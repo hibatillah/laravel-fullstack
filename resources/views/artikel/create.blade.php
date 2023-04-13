@@ -46,7 +46,7 @@
                     </div>
                     <div class="flex flex-col space-y-1">
                         <label for="Gambar_Artikel" class="text-slate-600">Gambar</label>
-                        <input type="file" name="Gambar_Artikel" id="Gambar_Artikel" accept="image/png, image/jpg, image/jpeg" class="block w-full text-sm text-slate-500 cursor-pointer file:cursor-pointer file:mr-4 file:py-2.5 file:px-5 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 @error('Gambar_Artikel') is-invalid @enderror"/>
+                        <input type="file" name="Gambar_Artikel" id="Gambar_Artikel" accept="image/png, image/jpg, image/jpeg" class="block w-full text-sm text-slate-500 cursor-pointer file:cursor-pointer file:mr-4 file:py-2.5 file:px-5 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100 @error('Gambar_Artikel') is-invalid @enderror"/>
                         @error('Gambar_Artikel')
                         <div class="text-red-600 text-xs mt-2">
                             {{ $message }}
@@ -59,23 +59,23 @@
                     <div class="flex gap-3">
                         <div>
                             <input type="radio" name="Kategori_Artikel" id="PMB" value="PMB" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="PMB" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">PMB</label>
+                            <label for="PMB" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">PMB</label>
                         </div>
                         <div>
                             <input type="radio" name="Kategori_Artikel" id="Program Kerja PCR" value="Program Kerja PCR" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="Program Kerja PCR" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Program Kerja PCR</label>
+                            <label for="Program Kerja PCR" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Program Kerja PCR</label>
                         </div>
                         <div>
                             <input type="radio" name="Kategori_Artikel" id="Penghargaan" value="Penghargaan" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="Penghargaan" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Penghargaan</label>
+                            <label for="Penghargaan" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Penghargaan</label>
                         </div>
                         <div>
                             <input type="radio" name="Kategori_Artikel" id="Lomba" value="Lomba" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="Lomba" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Lomba</label>
+                            <label for="Lomba" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Lomba</label>
                         </div>
                         <div>
                             <input type="radio" name="Kategori_Artikel" id="Umum" value="Umum" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="Umum" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Umum</label>
+                            <label for="Umum" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Umum</label>
                         </div>
                     </div>
                     @error('Kategori_Artikel')
@@ -89,11 +89,11 @@
                     <div class="flex gap-3">
                         <div>
                             <input type="radio" name="Status_Artikel" id="Aktif" value="Aktif" class="hidden peer @error('Kategori_Artikel') is-invalid @enderror">
-                            <label for="Aktif" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Aktif</label>
+                            <label for="Aktif" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Aktif</label>
                         </div>
                         <div>
                             <input type="radio" name="Status_Artikel" id="Tidak Aktif" value="Tidak Aktif" class="hidden peer @error('Status_Artikel') is-invalid @enderror">
-                            <label for="Tidak Aktif" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50/30 text-slate-700 cursor-pointer">Tidak Aktif</label>
+                            <label for="Tidak Aktif" class="flex items-center gap-1 px-4 py-1.5 rounded-lg border border-indigo-300 peer-checked:bg-indigo-50 peer-checked:ring-1 peer-checked:ring-indigo-50 peer-checked:text-indigo-600 peer-checked:border-indigo-50 text-slate-700 cursor-pointer">Tidak Aktif</label>
                         </div>
                     </div>
                     @error('Status_Artikel')

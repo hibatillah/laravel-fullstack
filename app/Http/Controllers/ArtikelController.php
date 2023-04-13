@@ -72,7 +72,7 @@ class ArtikelController extends Controller
     public function edit($id)
     {
         $data=DB::table('artikel_mhibatillah')->where('ID_Artikel', $id)->first();
-        return view('artikel.update', compact('data'));
+        return view('artikel.edit', compact('data'));
     }
 
     /**
