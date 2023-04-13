@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2023 at 06:23 AM
+-- Generation Time: Apr 13, 2023 at 02:12 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel-hibatillah`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikel_mhibatillah`
+--
+
+CREATE TABLE `artikel_mhibatillah` (
+  `ID_Artikel` varchar(255) NOT NULL,
+  `Gambar_Artikel` varchar(255) NOT NULL,
+  `Tanggal_Artikel` datetime NOT NULL,
+  `Kategori_Artikel` varchar(255) NOT NULL,
+  `Status_Artikel` varchar(255) NOT NULL,
+  `Konten_Artikel` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `artikel_mhibatillah`
+--
+
+INSERT INTO `artikel_mhibatillah` (`ID_Artikel`, `Gambar_Artikel`, `Tanggal_Artikel`, `Kategori_Artikel`, `Status_Artikel`, `Konten_Artikel`) VALUES
+('03caf825-d98c-11ed-ad52-00e09908c821', '5KCKOAaUdRW5Kb9AThUHejHYyXJcookkFUMQA4TA.png', '2023-04-26 06:44:00', 'Penghargaan', 'Tidak Aktif', 'genbi'),
+('1a7d7a90-d943-11ed-aa5f-00e09908c821', 'ceXtgsuncvHp8aAlcGbeOwufyySCod87x5UMbnMA.png', '2023-04-12 22:02:00', 'Lomba', 'Aktif', 'juara'),
+('7c9f51aa-d947-11ed-aa5f-00e09908c821', 'hQSY7svZU6by0AhYbUHDgdSRpiVlWMCMWIo4HW6w.jpg', '2023-04-29 10:39:00', 'Program Kerja PCR', 'Aktif', 'Bagaimana hari ini? Apa yang akan terjadi di hari esok? Kita tak tau, namun yang pasti kita harus siap untuk menjalaninya.');
 
 -- --------------------------------------------------------
 
@@ -157,6 +181,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `artikel_mhibatillah`
+--
+ALTER TABLE `artikel_mhibatillah`
+  ADD PRIMARY KEY (`ID_Artikel`);
 
 --
 -- Indexes for table `failed_jobs`
