@@ -112,7 +112,7 @@
                     @enderror
                 </div>
                 <div class="flex gap-2">
-                    <button type="reset" class="px-8 py-2 rounded-lg font-semibold text-indigo-700 bg-indigo-50 active:bg-indigo-100">Reset</button>
+                    <button type="reset" class="px-8 py-2 rounded-lg font-semibold border border-indigo-700 text-indigo-700 active:bg-indigo-50">Reset</button>
                     <button type="submit" class="px-8 py-2 rounded-lg font-semibold text-white bg-indigo-600 active:bg-indigo-700">Simpan</button>
                 </div>
             </form>
