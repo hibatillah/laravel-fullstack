@@ -10,7 +10,7 @@
 <body>
 
   <div class="w-full min-h-screen grid place-items-center">
-    <div class="min-w-[70%] max-w-[80%]">
+    <div class="min-w-[90%] max-w-[90%]">
       <div class="flex justify-between items-end">
         <h1 class="font-bold text-2xl/none text-slate-900 ml-1">Data Artikel</h1>
         <a href="{{ route('artikel.create') }}">
