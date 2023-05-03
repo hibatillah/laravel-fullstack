@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('index'); });
-
 Route::resource('/formulir', App\Http\Controllers\FormulirController::class);
 
 Route::resource('/artikel', App\Http\Controllers\ArtikelController::class);
 
 Route::get('/layout', function() {
     return view('layout.main');
+});
+
+Route::get('/', function() {
+    return view('layout.home');
 });
