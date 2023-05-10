@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="menu-item">
-                <a class="menu-link" onClick="AJAXPost('{{ url('/post') }}','','kt_content_container');">
+                <a class="menu-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                         <span class="svg-icon svg-icon-2">
@@ -56,11 +56,11 @@
                         </span>
                         <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">Post</span>
+                    <span class="menu-title">{{ __('Logout') }}</span>
                 </a>
-            </div>
-            <div class="menu-item">
-                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </div> 
         <!-- end::Menu -->

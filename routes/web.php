@@ -18,12 +18,13 @@ Route::resource('/formulir', App\Http\Controllers\FormulirController::class);
 Route::resource('/artikel', App\Http\Controllers\ArtikelController::class);
 
 Route::get('/layout', function() {
-    return view('layout.main');
+    return view('layout.home');
 });
 
 Route::get('/', function() {
-    return view('layout.home');
+    return view('welcome');
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
