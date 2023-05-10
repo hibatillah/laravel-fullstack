@@ -68,11 +68,11 @@
 <script>
     const logoutGroup = document.querySelector('.logout-group');
     const logoutIcon = document.querySelector('.logout-icon');
-    logoutGroup.addEventListener('mouseenter', () => {
+    logoutGroup.addEventListener('mouseover', () => {
         logoutIcon.setAttribute('stroke', '#0ca0f5');
     })
     logoutGroup.addEventListener('mouseleave', () => {
-        logoutIcon.setAttribute('stroke', '#0ca0f5');
+        logoutIcon.setAttribute('stroke', '#9da5bc');
     })
 </script>
 <script>
